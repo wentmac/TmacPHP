@@ -127,7 +127,7 @@ $img->loadFile("test.gif")->crop(0,0,100,100)->resize(50,50)->waterMark("mark.pn
 * 框架核心满足了平时MVC OOP开发的最小需求，没有像ci,yii,tp那样太臃肿复杂的功能银弹。方便灵活扩展，
 
 ## CASE
-TmacPHP已经成长了4年多了，目前已经有大量站点使用。有过实战检验。
+TmacPHP已经成长了4年多了，目前已经有大量站点使用。有过大量成熟的实战检验。
 * 住哪网目前线上的版本 http://www.zhuna.cn/ 百万级PV的检验。
 * 银品惠微商城 http://yph.weixinshow.com/ 公众号（银品惠）code 在https://github.com/wentmac/weixinshow
 * 聚店 http://www.090.cn/ 前后台（供应商，api，商城，会员中心，管理中心）
