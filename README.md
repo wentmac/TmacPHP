@@ -99,9 +99,9 @@ class service_goods_Detail_www extends service_goods_Detail_base
 //这样通过共同继承base中order_Detail就可以实现，同理把所有goods相关共同的方法都可以放在base中
 ````
 ### 支持自己添加扩展类库
-框架自带的类库目录 Framework/Plugin/*.class.php //框架的类库目录已经autoload了，直接初始化使用。
-自己扩展项目使用的类库 Project/APP_NAME/application/Plugin/
-例如
+    框架自带的类库目录 Framework/Plugin/*.class.php //框架的类库目录已经autoload了，直接初始化使用。
+    自己扩展项目使用的类库 Project/APP_NAME/application/Plugin/
+    例如
 ```php
 //大的类库，有自己目录结构的
 $alipay_config = Tmac::config( 'alipay.alipay_config', APP_WWW_NAME );
@@ -120,18 +120,18 @@ $img->loadFile("test.gif")->crop(0,0,100,100)->resize(50,50)->waterMark("mark.pn
 ```
 
 ## 性能
-通过简单的helloword加载测试对比，(apache ab).性能远高于TP,CI,YII等框架。具体测试数据正在完善。
-原理
+    通过简单的helloword加载测试对比，(apache ab).性能远高于TP,CI,YII等框架。具体测试数据正在完善。
+    原理
 * 第一次运行的时候把框架核心文件编译成一个~runtime.php文件,保证每次请求时的文件加载数量额外的文件及少。
 * 实现spl_autoload_register('_tmac_autoload'); 实现class文件自动按需加载的规则。
 * 框架核心满足了平时MVC OOP开发的最小需求，没有像ci,yii,tp那样太臃肿复杂的功能银弹。方便灵活扩展，
 
 ## CASE
-TmacPHP已经成长了4年多了，目前已经有大量站点使用。有过实战检验。
-住哪网目前线上的版本 http://www.zhuna.cn/ 百万级PV的检验。
-银品惠微商城 http://yph.weixinshow.com/ 公众号（银品惠）code 在https://github.com/wentmac/weixinshow
-聚店 http://www.090.cn/ 前后台（供应商，api，商城，会员中心，管理中心）
-用户的小企业站 http://www.ruixugroup.com/
+* TmacPHP已经成长了4年多了，目前已经有大量站点使用。有过实战检验。
+* 住哪网目前线上的版本 http://www.zhuna.cn/ 百万级PV的检验。
+* 银品惠微商城 http://yph.weixinshow.com/ 公众号（银品惠）code 在https://github.com/wentmac/weixinshow
+* 聚店 http://www.090.cn/ 前后台（供应商，api，商城，会员中心，管理中心）
+* 用户的小企业站 http://www.ruixugroup.com/
     
  
 ## MORE
