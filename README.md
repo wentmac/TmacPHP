@@ -6,13 +6,13 @@ TmacPHP MVC Framework是php mvc框架 OOP
 项目入口目录在wwwroot深层级，这样保证web目录访问不到程序文件，提高安全性。
 
     server_name  www.weixinshow.com;    
-    root         /var/www/www.weixinshow.com/demos/message/www/wwwroot/;
+    root         /var/www/www.weixinshow.com/Apps/helloworld/wwwroot/;
 ### 入口文件
     在每个app功能块的 APP_NAME/wwwroot/index.php//代码里有详细注释
 ### 配置文件
     Project/database.config.php //数据库及URL配置文件
     Project/Tmac.config.php     //框架配置文件
-    Project/APP_NAME/application/Config/config.php //每个APP_NAME的配置文件。
+    Project/Apps/{APP_NAME}/application/Config/config.php //每个APP_NAME的配置文件。
     
 ## 框架使用简介
 ### default Controller
@@ -85,6 +85,7 @@ View层在 APP_NAME/application/View/default/index.tpl
 ```
 ## TmacPHP MVC Framework 亮点案例
 ### 多个APP_NAME共同继承同一个base
+##### Apps目录下每个目录都是一个模块。比如会员中心，主站，后台，管理中心，移动版，接口API
 ```php
 //比如在电商项目中的封装了一个促销规则计算处理的函数，
 service_goods_Detail_base
@@ -130,7 +131,7 @@ $img->loadFile("test.gif")->crop(0,0,100,100)->resize(50,50)->waterMark("mark.pn
 TmacPHP已经成长了4年多了，目前已经有大量站点使用。有过大量成熟的实战检验。
 * 住哪网目前线上的版本 http://www.zhuna.cn/ 百万级PV的检验。
 * 银品惠微商城 http://yph.weixinshow.com/ 公众号（银品惠）code 在https://github.com/wentmac/weixinshow
-* 聚店 http://www.090.cn/ 前后台（供应商，api，商城，会员中心，管理中心）
+* 宝身茶公众号 http://m.baoshencha.com/ 前后台（供应商，api，商城，会员中心，管理中心）
 * 用户的小企业站 http://www.ruixugroup.com/
     
  
@@ -145,29 +146,31 @@ TmacPHP已经成长了4年多了，目前已经有大量站点使用。有过大
       | + css
       | + js
       | + image
-    +www
-    | + application
-      | + Config
-      | + Controller
-      | + Model
-        | + dao
-        | + entity
-        | + service
-      | + Plugin
-      | + View
-    | + var
-    | + wwwroot
-    +base
-    | + application
-      | + Config
-      | + Controller
-      | + Model
-        | + dao
-        | + entity
-        | + service
-      | + Plugin
-      | + View
-    | + var
-    | + wwwroot
+    +Apps  //Apps目录下每个目录都是一个模块。比如会员中心，主站，后台，管理中心，移动版，接口API
+    | +www
+     | + application
+        | + Config      //配置文件
+        | + Controller  //控制器
+        | + Model       
+          | + dao       //数据库驱动
+          | + entity    //实体
+          | + service   //业务层
+        | + Plugin      //第三方类库，插件
+        | + View        //模板层
+      | + var
+      | + wwwroot
+      +base  //放一些项目中公用的类库，公共的继承
+      | + application
+        | + Config
+        | + Controller
+        | + Model
+          | + dao
+          | + entity
+          | + service
+        | + Plugin
+        | + View
+      | + var
+      | + wwwroot
+    +Vendor   //放一些composer公用的轮子包
     -Tmac.config.php
     -database.config.php

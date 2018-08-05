@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html>
+  <head lang="en">
+      <meta charset="UTF-8">
+      <title></title>
+  </head>
+  <body>
+ <script type="text/javascript">
+     //socket地址格式：ws://ip:port/username/marketname/product
+     //var  wsClient=new WebSocket( 'ws://hq.iyunfun.com:40001/YF1615896/WA/PMAG');
+     var  wsClient=new WebSocket( 'ws://192.168.31.135:9501');
+     //var  wsClient=new WebSocket( 'ws://192.168.1.135:3000');
+     wsClient.open=function(e){
+         console.log("Connected!"+e.data);
+         console.log(e);
+		  document.write("Connected!"+"<br>");
+     }
+     wsClient.onclose=function(e){
+         console.log("Disconnected!");
+		  document.write("Disconnected"+"<br>");
+     }
+     wsClient.onmessage=function(e){
+         console.log("接收消息:"+e.data);
+         console.log(e);
+	      document.write(e.data+"<br>");        
+     }
+     wsClient.onerror=function(e){
+         console.log(e.data);
+     }
+ </script>
+ </body>
+ </html>

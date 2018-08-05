@@ -1,0 +1,75 @@
+body {
+    background-color: #f8f8f8
+}
+
+.weui-flex .placeholder {
+    margin: 5px;
+    padding: 0 10px;
+    height: 2.3em;
+    line-height: 2.3em;
+    text-align: center;
+    color: #cfcfcf
+}
+
+.page__bd {
+    padding: 0 15px;
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+
+.weui-cell__bd {
+    text-align: center
+}
+
+.weui-icon-checked {
+    width: 16px
+}
+
+.option_name {
+    height: 50px;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.goods_title{ text-align: left; float: left;width: 50%;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/}
+.goods_price{ width:15%; float: left;}
+
+.weui-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+.weui-stepper>span {
+    border: 1px solid #868686;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+}
+.weui-stepper>span em {
+    font-size: 20px;
+    font-style: italic;
+    font-family:-apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.weui-stepper>.input {
+    display: inline-block;
+    height: 30px;
+    width: 60px;
+}
+.weui-stepper input {
+    border: none;
+    width: 100%;
+    display: inline-block;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+}

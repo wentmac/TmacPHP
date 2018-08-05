@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+</body>
+</html>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+<script type="text/javascript">
+	//vars.pushRealIp = "{$pushRealIp}";
+	vars = {};
+	vars.pushRealIp = "114.55.130.79:8010";
+	vars.accountid = 'asdf';
+
+
+//  var socket = io.connect('ws://114.55.130.79:8010/WeiTrader/tradebiz.ws');
+/*
+  var socket = io.connect('ws://192.168.1.135:8081');
+  socket.emit('Message', 'asdf');  
+  socket.on('Message', function (data) {    
+  	console.log(data);
+    socket.emit('Message', 'asdf');
+  });	
+
+*/
+
+if('WebSocket' in window){
+        // 创建websocket实例
+        var socket = new WebSocket('ws://192.168.1.135:9502');
+        console.log(socket);
+        //打开
+        socket.onopen = function(event) {
+          // 发送
+          socket.send('I am the client and I\'m listening!');
+          // 监听
+          socket.onMessage = function(event) {
+                console.log('Client received a message',event);
+          };
+          // 关闭监听
+          socket.onclose = function(event) {
+                console.log('Client notified socket has closed',event);
+          };
+          // 关闭
+          //socket.close()
+        };
+}else{
+        alert('本浏览器不支持WebSocket哦~');
+} 
+
+</script>
+

@@ -1,0 +1,6 @@
+
+[2018-07-30 13:01:45]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'1995211\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'561354\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=598ED7D9C14753E5E845CFAACEEC94B0response body = {"statusCode":"160032","statusMsg":"短信模板无效"}template_id=1995211'
+[2018-07-30 13:01:45]  --> stdClass::__set_state(array(
+   'statusCode' => '160032',
+   'statusMsg' => '短信模板无效',
+))

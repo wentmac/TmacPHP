@@ -1,0 +1,102 @@
+
+[2018-07-31 00:00:13]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'211578\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=4679A016764B2A85A361FF6CC3438520response body = {"statusCode":"160038","statusMsg":"短信验证码发送过频繁"}template_id=199521'
+[2018-07-31 00:00:13]  --> stdClass::__set_state(array(
+   'statusCode' => '160038',
+   'statusMsg' => '短信验证码发送过频繁',
+))
+[2018-07-31 00:09:50]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'540313\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=566104B9CFC29DF469F7D7E03428B167response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:09:50]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:09:59]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'953916\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=8F04F6A56E5DC48FC3D78D3942D419A5response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:09:59]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:10:05]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'707597\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=1823FF774A218B110F1AD1EAA1EB11BAresponse body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:10:05]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:10:15]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'138406\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=CC8713792E937A8DDFBC26BB8577AC12response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:10:15]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:10:42]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'972544\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=92B4A62D01B73149BD0B82DEC63ED620response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:10:42]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:10:53]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'523316\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=9E1FED76A458C3D4FD8AADDF4A6F8669response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:10:53]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:15:03]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'993592\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=09D7158A172C17C08E9F788EF6C2A966response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:15:03]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:18:23]  --> 'request body = {\'to\':\'15011340207\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'303671\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=55E379F819FD3CFE326A612D49FBDE49response body = {"statusCode":"160038","statusMsg":"短信验证码发送过频繁"}template_id=199521'
+[2018-07-31 00:18:23]  --> stdClass::__set_state(array(
+   'statusCode' => '160038',
+   'statusMsg' => '短信验证码发送过频繁',
+))
+[2018-07-31 00:19:22]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'258244\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=93926B40D0074910FCCDC144BBBDB4C1response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:19:22]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:20:08]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'871131\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=4BA38AF4B5672E3CFE994F423B7A2EF8response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:20:08]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:21:48]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'997436\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=AD0810C4FF8FEE8269485145C170DADDresponse body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:21:48]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:22:12]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'327274\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=2AA6F8083E228BC80FAA5615282E95DDresponse body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:22:12]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:22:37]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'140909\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=B28E034606A1FA5375028CD1828CA03Bresponse body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:22:37]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:23:25]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'554199\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=73A5256B2CDAE2B8F06C2049E1E67A41response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:23:25]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:32:49]  --> 'request body = {\'to\':\'15011340204\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'443027\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=639044E40CB21F79D45BD7D8383A2070response body = {"statusCode":"160040","statusMsg":"验证码超出同模板同号码天发送上限"}template_id=199521'
+[2018-07-31 00:32:49]  --> stdClass::__set_state(array(
+   'statusCode' => '160040',
+   'statusMsg' => '验证码超出同模板同号码天发送上限',
+))
+[2018-07-31 00:38:31]  --> base\entity\SmsLog::__set_state(array(
+   'sms_id' => NULL,
+   'sms_type' => 6,
+   'sms_code' => 271100,
+   'sms_mobile' => '15011340210',
+   'sms_content' => '您的验证码为271100，请于5分钟内正确输入，如非本人操作，请忽略此短信|sms_tempalte_id=199521|sms_message_id=738c5a304b0d4484ac48f0a6dcc02496',
+   'sms_confirm_code' => NULL,
+   'sms_linked_id' => NULL,
+   'sms_time' => NULL,
+   'sms_ip' => '192.168.1.1',
+   'result_code' => '000000',
+   'fail_count' => NULL,
+   'sms_success' => NULL,
+   'is_only_push' => NULL,
+))
+[2018-07-31 00:41:21]  --> NULL
+[2018-07-31 00:41:39]  --> 'request body = {\'to\':\'15011340210\',\'templateId\':\'199521\',\'appId\':\'8aaf07085cf275c4015cf7910ef902aa\',\'datas\':[\'401663\',]}request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8aaf07085cf275c4015cf7910d9a02a4/SMS/TemplateSMS?sig=76164358E565A4E73441889B1C467712response body = {"statusCode":"160038","statusMsg":"短信验证码发送过频繁"}template_id=199521'
+[2018-07-31 00:41:39]  --> stdClass::__set_state(array(
+   'statusCode' => '160038',
+   'statusMsg' => '短信验证码发送过频繁',
+))

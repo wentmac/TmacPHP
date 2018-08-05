@@ -1,0 +1,246 @@
+
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">  
+  <meta content="target-densitydpi=device-dpi,width=720,user-scalable=no" name="viewport">
+
+
+  		<script type="text/javascript" src="http://dev.public.yph.weixinshow.com/common/amcharts/amcharts.js"></script>
+		<script type="text/javascript" src="http://dev.public.yph.weixinshow.com/common/amcharts/serial.js"></script>
+
+
+<script type="text/javascript">
+/**
+ * JS获取n至m随机整数
+ * 琼台博客
+ */
+function rd(n,m){
+    var c = m-n+1;  
+    return Math.floor(Math.random() * c + n);
+}
+/**
+ * Init some variables for demo purposes
+ */
+var second = 0;
+var firstDate = new Date();
+firstDate.setSeconds( firstDate.getSeconds() - 120 );
+
+/**
+ * Function that generates random data
+ */
+function generateChartData() {
+  var chartData = [];
+  for ( second = 0; second < 120; second++ ) {
+  
+	var newDate = new Date( firstDate );
+    newDate.setSeconds( newDate.getSeconds() + second );
+	console.log(newDate);    
+    var visits = Math.round( rd(10,15) ) ;
+
+    chartData.push( {
+      "date": newDate,
+      "sliver_price": visits
+    } );   	
+    
+  }
+
+  return chartData;
+}
+
+var chart = AmCharts.makeChart("chartdiv",
+	{
+		"type": "serial",
+		"categoryField": "date",
+		"categoryAxis": {
+			"gridPosition": "start",				
+			"parseDates": true,			
+			"minPeriod": "ss"
+		},
+		"marginTop": 0,
+		"marginLeft": 0,
+		"marginRight": 0,
+		"chartCursor": {
+			"enabled": true,
+			"valueLineBalloonEnabled": true,
+			"valueLineEnabled": true,
+			"zoomable": false
+		},
+		"trendLines": [],
+		"graphs": [
+			{
+				"balloonText": "[[title]] of [[date]]:[[sliver_price]]",
+				"bullet": "round",
+				"id": "AmGraph-1",
+				"title": "graph 1",
+				"type" : "smoothedLine",
+				"valueField": "sliver_price",
+				"hideBulletsCount": 50,
+				"fillAlphas": 0.3
+			}
+		],
+		"guides": [],
+		"valueAxes": [
+			{
+				"id": "ValueAxis-1",
+				"position": "right",
+				"axisTitleOffset": 0,								
+				"inside": true,	
+				"logarithmic":true,		//值为对数
+														
+				"title": ""
+			}
+		],
+		"allLabels": [],
+		"balloon": {},
+		"titles": [
+			{
+				"id": "Title-1",
+				"size": 15,
+				"text": ""
+			}
+		],		
+		"chartCursor": {
+			"enabled": true,
+			"balloonPointerOrientation": " vertical",
+			"categoryBalloonEnabled": false,
+			"leaveAfterTouch": false,
+			"limitToGraph": "AmGraph-1",
+			"oneBalloonOnly": true,
+			"tabIndex": 0,
+			"valueLineBalloonEnabled": true,
+			"valueLineEnabled": true,
+			"valueZoomable": true			
+		},		
+		"dataProvider": generateChartData()
+	}
+);
+
+/*
+function zoomChart(){
+	console.log('fuck');
+}
+chart.addListener("dataUpdated", zoomChart);//第一次加载的时候调用的事件监听器  
+*/
+
+/**
+ * Set interval to push new data points periodically
+ */
+// set up the chart to update every second 每分钟清一次前面的数据
+
+var clock = 60;
+var appendDataCount = 0;
+
+setInterval( function() { 	
+	clock--;
+	if ( clock == 30 ) {		
+		chart.dataProvider.splice(0,appendDataCount);//todo 这个地方要动态计算
+		clock = 60;
+		appendDataCount = 0;
+	}	    	
+}, 1000 );
+
+
+/*
+var milli_second = 60*1000;
+setInterval( function() { 
+	milli_second++;
+}, 1 );
+
+
+setInterval( function() { 
+	appendStockDate();	
+}, 500 );
+*/
+var  ws = new WebSocket( 'ws://112.74.18.165:9501');
+//var  ws = new WebSocket( 'ws://192.168.1.135:9502');
+//var  ws=new WebSocket( 'ws://192.168.1.135:3000');
+ws.open=function(e){
+ 	console.log("Connected!"+e.data);	 
+  	//document.write("Connected!"+"<br>");
+}
+ws.onclose=function(e){
+ 	console.log("Disconnected!");
+  	//document.write("Disconnected"+"<br>");
+}
+ws.onmessage=function(e){
+ 	console.log("接收消息:"+e.data);	 	
+  	//document.write(e.data+"<br>");       
+  	handleData(e.data);
+}
+ws.onerror=function(e){
+ 	console.log(e.data);
+}	
+/**
+ * 处理数据
+ */
+function handleData(data){
+	//代码，名称，时间，当前价，今日开盘价，今日最高价，今日最低价
+	//data='PMAG,白银现货,2016-10-31 13:52:50,17.684,17.625,17.7455,17.575';
+	var data_array = data.split(',');
+	var now_price = data_array[4];
+	var highest_price = data_array[6];
+	var lowest_price = data_array[7];
+	appendDataCount +=2;
+	return appendStockDate(now_price);
+}
+
+/**
+ * 添加新数据
+ */
+function appendStockDate(now_price)
+{
+	
+  // normally you would load new datapoints here,
+  // but we will just generate some random values
+  // and remove the value from the beginning so that
+  // we get nice sliding graph feeling
+  
+  // remove datapoint from the beginning  
+	//second++;
+	
+	var newDate = new Date();
+	console.log(now_price+'==='+newDate);
+	//console.log(newDate);
+	//chart.chartCursor.showCursorAt(newDate);	
+    //newDate.setMilliseconds( newDate.getMilliseconds()+milli_second );	
+    //newDate.setSeconds( newDate.getSeconds() + second,milli_second );	
+    //newDate.setMilliseconds( newDate.getMilliseconds() + day*1000 );	
+  // add new one at the end    
+	//var now_price = Math.round( rd(10,15) );
+
+	//console.log(newDate);
+	//写真实数据  
+	chart.dataProvider.push({
+		date: newDate,
+		sliver_price: now_price
+	});
+	chart.validateData();	
+	//console.log(newDate.getSeconds()+'----'+newDate.getMilliseconds());
+	//chart.chartCursor.showCursorAt(newDate);
+  	
+  	
+	//写入1分钟以后 的空白点位数据
+	var newDate = new Date(newDate);		  
+	newDate.setSeconds(newDate.getSeconds()+clock);   	
+	//newDate.setMilliseconds(newDate.getMilliseconds()+clock*1000);   		
+	chart.dataProvider.push( {
+		date: newDate	
+	} );    
+	//console.log(newDate+'----------------'+clock);
+	chart.validateData();	
+}
+</script>
+	
+  
+</head>
+<body>
+
+
+<div id="chartdiv" style="width: 720px; height: 600px; background-color: #FFFFFF;" ></div>
+
+</body>
+</html>

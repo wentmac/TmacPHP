@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+ 
+
+  		<script type="text/javascript" src="http://dev.public.yph.weixinshow.com/common/amcharts/amcharts.js"></script>
+		<script type="text/javascript" src="http://dev.public.yph.weixinshow.com/common/amcharts/serial.js"></script>
+
+
+<script type="text/javascript">
+/**
+ * JS获取n至m随机整数
+ * 琼台博客
+ */
+function rd(n,m){
+    var c = m-n+1;  
+    return Math.floor(Math.random() * c + n);
+}
+/**
+ * Init some variables for demo purposes
+ */
+var day = 0;
+var firstDate = new Date();
+firstDate.setDate( firstDate.getDate() - 500 );
+
+/**
+ * Function that generates random data
+ */
+function generateChartData() {
+  var chartData = [];
+  for ( day = 0; day < 300; day++ ) {
+    var newDate = new Date();    
+    var visits = Math.round( rd(10,15) ) ;
+
+    chartData.push( {
+      "date": newDate,
+      "value": visits
+    } );
+  }
+
+  return chartData;
+}
+var chartData = generateChartData();
+
+
+
+/**
+var chartData = [
+					{
+						"category": "category 1",
+						"column-1": 8
+					},
+					{
+						"category": "category 2",
+						"column-1": 6
+					},
+					{
+						"category": "category 3",
+						"column-1": 2
+					},
+					{
+						"category": "category 4",
+						"column-1": 1
+					},
+					{
+						"category": "category 5",
+						"column-1": 2
+					},
+					{
+						"category": "category 6",
+						"column-1": 3
+					},
+					{
+						"category": "category 7",
+						"column-1": 6
+					}
+				];
+				*/
+	AmCharts.ready(function(){
+		var chart = new AmCharts.AmSerialChart();
+		chart.dataProvider = chartData;
+		chart.categoryField = "date";			
+		chart.marginTop = 0;
+		chart.marginLeft = 0;
+		chart.marginRight = 0;
+		
+		//分类轴
+		var categoryAxis = chart.categoryAxis;		
+		categoryAxis.gridPosition = "start";
+		categoryAxis.parseDates = true;
+		categoryAxis.minPeriod = "ss";
+		//categoryAxis.minPeriod = "HH:NN:SS";
+		//categoryAxis.minPeriod = "HH:NN:SS";
+		
+		//图标光标chartCursor
+		var chartCursor = new AmCharts.ChartCursor();
+		chartCursor.enabled = true;
+		chartCursor.valueLineBalloonEnabled = true;
+		chartCursor.valueLineEnabled = true;
+		chartCursor.zoomable = false;
+		chart.addChartCursor(chartCursor);		
+		
+		// 图表 GRAPH
+		graph = new AmCharts.AmGraph();
+		graph.type = "smoothedLine"; // this line makes the graph smoothed line.
+		graph.id = "AmGraph-1";
+		graph.title = "graph 1";		
+		graph.valueField = "value";
+		graph.balloonText = "[[date]]:[[value]]";
+		graph.fillAlphas = 0.1;
+		chart.addGraph(graph);		
+		
+		//valueAxes 值轴 value		
+		var valueAxis = new AmCharts.ValueAxis();
+		valueAxis.id = "ValueAxis-1";
+		valueAxis.title = "";
+		valueAxis.position = "right";
+		valueAxis.precision = 0;
+		valueAxis.inside = true;		
+		chart.addValueAxis(valueAxis);
+		
+		chart.write("chartdiv");
+		
+		
+		/**
+		 * Set interval to push new data points periodically
+		 */
+		// set up the chart to update every second
+		
+		setInterval( function() {
+		  // normally you would load new datapoints here,
+		  // but we will just generate some random values
+		  // and remove the value from the beginning so that
+		  // we get nice sliding graph feeling
+
+		  // remove datapoint from the beginning
+		  chart.dataProvider.shift();
+
+		  // add new one at the end
+		  day++;
+		  var newDate = new Date();		  
+		  var visits = Math.round( rd(10,15) );
+		  chart.dataProvider.push( {
+			date: newDate,
+			value: visits
+		  } );
+		  
+		  var newDate = new Date();		  
+		  newDate.setMinutes(newDate.getMinutes()+2);
+		  console.log(newDate);
+		  /*
+		  chart.dataProvider.push( {
+			date: newDate,
+			value: 0
+		  } );		  
+		  */
+		  console.log(chart.dataProvider);
+		  chart.validateData();
+		}, 1000 );			
+		
+	});			
+	
+
+		</script>
+	
+  
+</head>
+<body>
+ 
+		<div id="chartdiv" style="width: 100%; height: 300px; background-color: #FFFFFF;" ></div>
+
+</body>
+</html>

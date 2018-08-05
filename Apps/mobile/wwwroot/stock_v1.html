@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+ 
+<link href="http://dev.public.yph.weixinshow.com/dfh/default/css/css.css" rel="stylesheet" type="text/css">
+
+  		<script type="text/javascript" src="http://dev.public.yph.weixinshow.com/common/amcharts/amcharts.js"></script>
+		<script type="text/javascript" src="http://dev.public.yph.weixinshow.com/common/amcharts/serial.js"></script>
+
+
+<script type="text/javascript">
+/**
+ * JS获取n至m随机整数
+ * 琼台博客
+ */
+function rd(n,m){
+    var c = m-n+1;  
+    return Math.floor(Math.random() * c + n);
+}
+/**
+ * Init some variables for demo purposes
+ */
+var day = 0;
+var firstDate = new Date();
+firstDate.setSeconds( firstDate.getSeconds() - 180 );
+
+/**
+ * Function that generates random data
+ */
+function generateChartData() {
+  var chartData = [];
+  for ( day = 0; day < 180; day++ ) {
+  
+	var newDate = new Date( firstDate );
+    newDate.setSeconds( newDate.getSeconds() + day );
+	console.log(newDate);    
+    var visits = Math.round( rd(10,15) ) ;
+
+    chartData.push( {
+      "date": newDate,
+      "sliver_price": visits
+    } );
+  }
+
+  return chartData;
+}
+
+var chart = AmCharts.makeChart("chartdiv",
+	{
+		"type": "serial",
+		"categoryField": "date",
+		"categoryAxis": {
+			"gridPosition": "start",
+			"parseDates": true,			
+			"minPeriod": "ss"
+		},
+		"marginTop": 0,
+		"marginLeft": 0,
+		"marginRight": 0,
+		"chartCursor": {
+			"enabled": true,
+			"valueLineBalloonEnabled": true,
+			"valueLineEnabled": true,
+			"zoomable": false
+		},
+		"trendLines": [],
+		"graphs": [
+			{
+				"balloonText": "[[title]] of [[category]]:[[value]]",
+				"bullet": "round",
+				"id": "AmGraph-1",
+				"title": "graph 1",
+				"type" : "smoothedLine",
+				"valueField": "sliver_price",
+				"hideBulletsCount": 50,
+				"fillAlphas": 0.1
+			}
+		],
+		"guides": [],
+		"valueAxes": [
+			{
+				"id": "ValueAxis-1",
+				"position": "right",
+				"precision": 0,
+				"inside": true,
+				"title": ""
+			}
+		],
+		"allLabels": [],
+		"balloon": {},
+		"titles": [
+			{
+				"id": "Title-1",
+				"size": 15,
+				"text": ""
+			}
+		],
+		"dataProvider": generateChartData()
+	}
+);
+
+
+/**
+ * Set interval to push new data points periodically
+ */
+// set up the chart to update every second
+
+var clock = 6000;
+day = day*100;
+setInterval( function() {
+  // normally you would load new datapoints here,
+  // but we will just generate some random values
+  // and remove the value from the beginning so that
+  // we get nice sliding graph feeling
+
+  // remove datapoint from the beginning
+	day+=100;
+	chart.dataProvider.shift();	
+	var newDate = new Date(firstDate);
+    newDate.setMilliseconds( newDate.getMilliseconds() + day );	
+  // add new one at the end    
+	var visits = Math.round( rd(10,15) );
+
+	console.log(newDate);
+  
+	chart.dataProvider.push({
+		date: newDate,
+		sliver_price: visits
+	});
+	chart.validateData();
+  
+  
+	clock-=10;
+	if(clock==3000){
+		clock=6000;
+	}
+	  var newDate = new Date(firstDate);		  
+	  newDate.setMilliseconds(newDate.getMilliseconds()+day+clock);   
+	  
+	  chart.dataProvider.push( {
+		date: newDate	
+	  } );    
+	  chart.validateData();  
+	    
+}, 10 );		
+
+</script>
+	
+  
+</head>
+<body>
+
+
+<div id="chartdiv" style="width: 100%; height: 600px; background-color: #FFFFFF;" ></div>
+
+</body>
+</html>
