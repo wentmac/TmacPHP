@@ -95,7 +95,7 @@ class DbMySQLi extends Database
      */
     public function fetch( $rs )
     {
-        return mysqli_fetch_array( $rs, MYSQL_ASSOC );
+        return mysqli_fetch_assoc( $rs );
     }
 
     /**
