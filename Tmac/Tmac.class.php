@@ -343,8 +343,15 @@ class Tmac
      * @param object $e
      * @access public
      */
-    public final function exception ( $e )
+    public final function exception( $e )
     {
-        $e->getError ();
+        if ( $e instanceof Exception ) {
+            $e->getError();
+        } else {
+            echo "Error code: " . $e->getCode() . '<br>';
+            echo "Error message: " . $e->getMessage() . '<br>';
+            echo "Error file: " . $e->getFile() . '<br>';
+            echo "Error fileline: " . $e->getLine() . '<br>';
+        }
     }
 }

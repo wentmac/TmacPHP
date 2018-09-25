@@ -31,7 +31,7 @@ final class dao_factory_base
     public static function getDao( $name, $params = '', $alias = '' )
     {
         $alias = empty( $alias ) ? $name : $alias;
-        $args = $params;
+        $args = [ $params ];
         if ( isset( self::$daoInstances[ $alias ] ) ) {
             $object = self::$daoInstances[ $alias ];
         } else {
