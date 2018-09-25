@@ -4,7 +4,7 @@
  * Power By Tmac PHP MVC framework
  * $Author: zhangwentao $  <zwttmac@qq.com>
  * $Id: Tmac.class.php 325 2016-05-31 10:07:35Z zhangwentao $
- * http://shop.weixinshow.com；
+ * http://www.t-mac.org； 
  */
 class Tmac
 {
@@ -16,6 +16,7 @@ class Tmac
     protected static $model = array();
     protected static $plugin = array();
     protected static $config = array();
+    public static $container;
 
     /**
      * core
@@ -54,6 +55,7 @@ class Tmac
         if ( $GLOBALS[ 'TmacConfig' ][ 'Session' ][ 'start' ] ) {
             self::session ();
         }
+        self::$container = new Container();
         //Router
         new Controller();
     }
@@ -345,5 +347,4 @@ class Tmac
     {
         $e->getError ();
     }
-
 }

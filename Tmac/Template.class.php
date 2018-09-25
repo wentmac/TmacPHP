@@ -4,7 +4,7 @@
  * Power By Tmac PHP MVC framework
  * $Author: zhangwentao $  <zwttmac@qq.com>
  * $Id: Template.class.php 325 2016-05-31 10:07:35Z zhangwentao $
- * http://shop.weixinshow.com；
+ * http://www.t-mac.org；
  * ---------------------------------------------------
  * 模板类 - 类似 Discuz 模板引擎解析 支持PHP5.3 缓存绝对路径做了修改
  * ---------------------------------------------------

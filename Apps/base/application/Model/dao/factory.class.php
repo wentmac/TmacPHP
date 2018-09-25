@@ -23,22 +23,21 @@ final class dao_factory_base
     /**
      * 调用服务（共享实例）
      * @param string $name
-     * @param array $params
+     * @param string $params
+     * @param string $alias 别名，代表不同参数生成的不同实例
      * @return mixed
      * @throws Exception
      */
-    public static function getDao( $name, $params = '' )
+    public static function getDao( $name, $params = '', $alias = '' )
     {
-        if ( isset( self::$daoInstances[ $name ] ) ) {
-            $object = self::$daoInstances[ $name ];
+        $alias = empty( $alias ) ? $name : $alias;
+        $args = $params;
+        if ( isset( self::$daoInstances[ $alias ] ) ) {
+            $object = self::$daoInstances[ $alias ];
         } else {
-            if ( !empty( $params ) ) {
-                $classReflection = new \ReflectionClass( $name );
-                $instance = $classReflection->newInstanceArgs( [ $params ] );
-            } else {
-                $instance = new \ReflectionClass( $name );
-            }
-            $object = self::$daoInstances[ $name ] = $instance;
+            $classReflection = new \ReflectionClass( $name );
+            $instance = $classReflection->newInstanceArgs( $args );
+            $object = self::$daoInstances[ $alias ] = $instance;
         }
 
         return $object;
@@ -47,19 +46,15 @@ final class dao_factory_base
     /**
      * 调用服务（不共享实例）
      * @param string $name
-     * @param array $params
+     * @param string $params
      * @return mixed
      * @throws Exception
      */
     public static function get( $name, $params = '' )
     {
-        if ( isset( self::$daoInstances[ $name ] ) ) {
-            $object = self::$daoInstances[ $name ];
-        } else {
-            $object = self::$daoInstances[ $name ] = new \ReflectionClass( $name );
-        }
-
-        return $object->newInstanceArgs( [ $params ] );
+        $args = [ $params ];
+        $object = new \ReflectionClass( $name );
+        return $object->newInstanceArgs( $args );
     }
 
     /**

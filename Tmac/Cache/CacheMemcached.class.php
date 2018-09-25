@@ -4,7 +4,7 @@
  * Power By Tmac PHP MVC framework
  * $Author: zhangwentao $  <zwttmac@qq.com>
  * $Id: CacheMemcached.class.php 507 2016-10-31 18:21:39Z zhangwentao $
- * http://shop.weixinshow.com；
+ * http://www.t-mac.org；
  */
 class CacheMemcached extends Cache
 {

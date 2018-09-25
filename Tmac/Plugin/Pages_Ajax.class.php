@@ -4,7 +4,7 @@
  * Power By Tmac PHP MVC framework
  * $Author: zhangwentao $  <zwttmac@qq.com>
  * $Id: Pages_Ajax.class.php 325 2016-05-31 10:07:35Z zhangwentao $
- * http://shop.weixinshow.com；
+ * http://www.t-mac.org；
  */
 
 /**

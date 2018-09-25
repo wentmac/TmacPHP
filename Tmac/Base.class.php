@@ -4,7 +4,7 @@
  * Power By Tmac PHP MVC framework
  * $Author: zhangwentao $  <zwttmac@qq.com>
  * $Id: Base.class.php 325 2016-05-31 10:07:35Z zhangwentao $
- * http://shop.weixinshow.com； 
+ * http://www.t-mac.org；
  */
 class Base
 {
@@ -35,13 +35,13 @@ class Base
 
     public function __construct()
     {
-        $this->isPost = (isset( $_SERVER[ 'REQUEST_METHOD' ] ) && $_SERVER[ 'REQUEST_METHOD' ] === 'POST');
+        $this->isPost = ( isset( $_SERVER[ 'REQUEST_METHOD' ] ) && $_SERVER[ 'REQUEST_METHOD' ] === 'POST' );
         $this->now = time();
     }
 
     /**
      * 连接数据库
-     * @param string $database   数据库名
+     * @param string $database 数据库名
      * @access public
      * @final
      */
@@ -248,6 +248,28 @@ class Base
                 return '';
             }
         }
+    }
+
+    /**
+     * 返回服务，需要初始化
+     * @param string $name 类名称
+     * @param array $params __construct 参数
+     * @return object
+     */
+    public final function get( $name, $params = [] )
+    {
+        return Tmac::$container->get( $name, $params );
+    }
+
+    /**
+     * 取共享服务，返回单例，无需初始化
+     * @param string $name 类名称
+     * @param array $params __construct 参数
+     * @return object
+     */
+    public final function getShared( $name, $params = [], $alias = '' )
+    {
+        return Tmac::$container->getShared( $name, $params = [], $alias = '' );
     }
 
 }

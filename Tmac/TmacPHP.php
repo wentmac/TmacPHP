@@ -4,7 +4,7 @@
  * Power By Tmac PHP MVC framework
  * $Author: zhangwentao $  <zwttmac@qq.com>
  * $Id: TmacPHP.php 439 2016-10-04 09:47:05Z zhangwentao $
- * http://shop.weixinshow.com； 
+ * http://www.t-mac.org； 
  */
 //加载配置文件
 require(TMAC_BASE_PATH . 'Tmac.config.php');
@@ -85,6 +85,7 @@ function compiled_runtime_file( $runtime )
         TMAC_PATH . 'SessionDb.class.php',
         TMAC_PATH . 'Template.class.php',
         TMAC_PATH . 'Tmac.class.php',
+        TMAC_PATH . 'Container.class.php',
         TMAC_PATH . 'TmacException.class.php',
         TMAC_PATH . 'Log.class.php',
         TMAC_PATH . 'Cache' . DIRECTORY_SEPARATOR . 'Cache.class.php',
