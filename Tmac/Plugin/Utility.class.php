@@ -60,8 +60,8 @@ class Utility
             $type_ary = explode(',', $type);
             foreach ($a AS $key => $value) {
                 if (is_object($value)) {
-                    $key = strval($value->$type_ary[0]);
-                    $value = strval($value->$type_ary[1]);
+                    $key = strval($value->{$type_ary[0]});
+                    $value = strval($value->{$type_ary[1]});
                 }
                 $selected = $v == $key ? 'selected' : null;
                 $option .= "<option value='{$key}' {$selected}>" . strip_tags($value) . "</option>";
