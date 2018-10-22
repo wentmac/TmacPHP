@@ -286,26 +286,29 @@ class Tmac
         if ( !empty ( $GLOBALS[ 'TmacConfig' ][ 'Session' ][ 'expire' ] ) )
             ini_set ( 'session.gc_maxlifetime', $GLOBALS[ 'TmacConfig' ][ 'Session' ][ 'expire' ] );
         if ( $GLOBALS[ 'TmacConfig' ][ 'Session' ][ 'type' ] == 'DB' ) {
-            ini_set ( 'session.save_handler', 'user' );  //默认值是 files            
+            ini_set ( 'session.save_handler', 'user' );  //默认值是 files
             $hander = new SessionDb(); //开始session存放mysql里的相关操作
             $hander->execute ();
         } else if ( $GLOBALS[ 'TmacConfig' ][ 'Session' ][ 'type' ] == 'memcache' ) {
             ini_set ( "session.save_handler", "memcache" );
             ini_set ( "session.save_path", "tcp://{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Memcached' ][ 'host' ]}:{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Memcached' ][ 'port' ]}" );
         } else if ( $GLOBALS[ 'TmacConfig' ][ 'Session' ][ 'type' ] == 'memcached' ) {
-            ini_set ( "session.save_handler", "memcached" ); // 是memcached不是memcache  
-            ini_set ( "session.save_path", "{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Memcached' ][ 'host' ]}:{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Memcached' ][ 'port' ]}" ); // 不要tcp:[/b]      
+            ini_set ( "session.save_handler", "memcached" ); // 是memcached不是memcache
+            ini_set ( "session.save_path", "{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Memcached' ][ 'host' ]}:{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Memcached' ][ 'port' ]}" ); // 不要tcp:[/b]
+        } else if ( $GLOBALS[ 'TmacConfig' ][ 'Session' ][ 'type' ] == 'redis' ) {
+            ini_set ( "session.save_handler", "redis" ); // 是memcached不是memcache
+            ini_set ( "session.save_path", "tcp://{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Redis' ]['default'][ 'host' ]}:{$GLOBALS[ 'TmacConfig' ][ 'Cache' ][ 'Redis' ]['default'][ 'port' ]}" );
         }
         session_start ();
     }
 
     /**
      * 获取File缓存实例
-     * 使用方法 $cat_list = Tmac::getCache('cat_list', array($this->category_model, 'getCategoryList'), array(0), 86400); 
+     * 使用方法 $cat_list = Tmac::getCache('cat_list', array($this->category_model, 'getCategoryList'), array(0), 86400);
      * @param type $variable
      * @param type $function_array
      * @param type $expire
-     * @return type 
+     * @return type
      */
     public final static function getCache ( $variable, $callback, $params = array(), $expire = 60 )
     {
