@@ -21,11 +21,11 @@
 
 //↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 //合作身份者id，以2088开头的16位纯数字
-$config[ 'alipay_config' ][ 'partner' ] = '2088021006092491';
+$config[ 'alipay_config' ][ 'partner' ] = '2088021491';
 
 //安全检验码，以数字和字母组成的32位字符
 //如果签名方式设置为“MD5”时，请设置该参数
-$config[ 'alipay_config' ][ 'key' ] = 'duwc1tiu7f5pynu4vrniktizwmx5rryg';
+$config[ 'alipay_config' ][ 'key' ] = 'duwc1tiu7f5pynyg';
 
 //签约支付宝账号或卖家支付宝帐户
 $config[ 'alipay_config' ][ 'seller_email' ] = 'admin@090.cn';

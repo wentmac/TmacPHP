@@ -8,34 +8,34 @@
  */
 //mp.weixin.qq.com admin@090.cn
 $config[ 'oauth' ][ 'wechat' ] = array(
-    'appid' => 'wx64e3d127ad250698',
-    'mchid' => '1310300301',
-    'key' => '0d884dc164a470918e6ed23b813eeb0d',//非唯 
-    'appsecret' => 'fc5c28fdbd390763919bc5b61dcf68e1'
+    'appid' => 'wx***98',
+    'mchid' => '1310**01',
+    'key' => '0d884dc1**eb0d',//非唯
+    'appsecret' => 'fc5c**cf68e1'
 );
 //open.weixin.qq.com  18610247767@qq.com 移动应用
 $config[ 'oauth' ][ 'wechat_open_app' ] = array(
-    'appid' => 'wx909d21a07b88772d',
-    'mchid' => '1254451301',
-    'key' => '0d884dc164a470918e6ed23b813eeb0d',
-    'appsecret' => '55369c8b6b66b5792b70544e8ac3c806'
+    'appid' => 'wx90*88772d',
+    'mchid' => '125*01',
+    'key' => '0d884d*b0d',
+    'appsecret' => '55369*c3c806'
 );
 //open.weixin.qq.com  18610247767@qq.com web应用
 $config[ 'oauth' ][ 'wechat_open_web' ] = array(
-    'appid' => 'wx27d95194a07c031a',    
-    'appsecret' => '63cec23831f341a3008298be9c000d75'
+    'appid' => 'wx27d951*31a',
+    'appsecret' => '63cec*9c000d75'
 );
 $config[ 'oauth' ][ 'weibo' ] = array(
-    'appkey' => '1069051434',    
-    'appsecret' => 'deecda50c976fbbde449e0c07cb6c72b'
+    'appkey' => '10*1434',
+    'appsecret' => 'deec*6c72b'
 );
 $config[ 'oauth' ][ 'qq' ] = array(
-    'appid' => '101227632',
-    'appkey' => '0048387fc67adb5d7d8e89a2b8741d03'    
+    'appid' => '10*32',
+    'appkey' => '004*8741d03'
 );
 $config[ 'oauth' ][ 'qq_app' ] = array(
-    'appid' => '1104646609',
-    'appkey' => 'afEd74We6rxLcDuw'    
+    'appid' => '11*09',
+    'appkey' => 'afE*Duw'
 );
 //mp.weixin.qq.com admin@090.cn 企业给用户付款专用
 /**
@@ -47,8 +47,8 @@ $config[ 'oauth' ][ 'weixin_transfers' ] = array(
 );
 */
 $config[ 'oauth' ][ 'weixin_transfers' ] = array(
-    'appid' => 'wx64e3d127ad250698',
-    'mchid' => '1310300301',
-    'key' => '0d884dc164a470918e6ed23b813eeb0d',
-    'appsecret' => 'fc5c28fdbd390763919bc5b61dcf68e1'
+    'appid' => 'wx64e*698',
+    'mchid' => '13*01',
+    'key' => '0d884*eb0d',
+    'appsecret' => 'fc5c*f68e1'
 );
